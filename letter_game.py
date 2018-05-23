@@ -104,7 +104,7 @@ def play(done):
             if len(bad_guesses) == 7:
                 draw(bad_guesses, good_guesses, secret_word)
                 print("You lost!")
-                print("The secret word was {}".format(secret_word))
+                print("The secret word was {}.".format(secret_word))
                 done = True
 
         if done:
