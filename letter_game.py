@@ -56,10 +56,13 @@ def get_guess(bad_guesses, good_guesses):
         guess = input("Guess a letter: ").lower()
 
         if len(guess) != 1:
+            # make sure user does not guess multiple letters
             print("You can only guess a single letter!")
         elif guess in bad_guesses or guess in good_guesses:
+            # make sure user does not guess the same letter multiple times
             print("You've already guessed that letter!")
         elif not guess.isalpha():
+            # isalpha checks for alphanumeric
             print("You can only guess letters!")
         else:
             return guess
