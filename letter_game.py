@@ -35,12 +35,12 @@ def clear():
         os.system('clear')
 
 # 'draw' game interface
-def draw(bad_guesses, good_guesses, secret_word):
+def draw(bad_guesses, good_guesses, secret_word, chosen_set):
     # clear the screen
     clear()
 
-    # draw the strikes
-    print('Strikes: {}/7'.format(len(bad_guesses)))
+    # print category and draw the strikes
+    print("Category: " + chosen_set + " | " + "Strikes: {}/7".format(len(bad_guesses)))
     print('')
 
     print('Bad guesses: ')
@@ -48,9 +48,12 @@ def draw(bad_guesses, good_guesses, secret_word):
         print(letter, end=' ')
     print('\n')
 
+    # draws the line for the word
     for letter in secret_word:
         if letter in good_guesses:
             print(letter, end='')
+        elif letter == " ":
+            print(' ', end ='')
         else:
             print('_', end='')
 
@@ -82,22 +85,31 @@ def play(done):
     category = int(input("Which category do you want to play with? "))
     if(category == 1):
         chosen_set = fruits
+        chosen_name = "Fruits"
     elif(category == 2):
         chosen_set = vegetables
+        chosen_name = "Vegetables"
     elif(category == 3):
         chosen_set = candies
-    secret_word = random.choice(chosen_set)[:-1]
+        chosen_name = "Candies"
+    secret_word = ""
+    if " " in secret_word:
+        secret_word = random.choice(chosen_set)
+    else:
+        secret_word = random.choice(chosen_set)[:-1]
     bad_guesses = []
     good_guesses = []
 
+    # game manager
     while True:
-        draw(bad_guesses, good_guesses, secret_word)
+        draw(bad_guesses, good_guesses, secret_word, chosen_name)
         guess = get_guess(bad_guesses, good_guesses)
 
-        if guess in secret_word:
+        actual_word = secret_word.replace(" ", "")
+        if guess in actual_word:
             good_guesses.append(guess)
             found = True
-            for letter in secret_word:
+            for letter in actual_word:
                 if letter not in good_guesses:
                     found = False
             if found:
@@ -112,6 +124,7 @@ def play(done):
                 print("The secret word was {}.".format(secret_word))
                 done = True
 
+        # game over --> play again
         if done:
             play_again = input("Play again? Y/N ")
             if play_again.lower() != 'n':
