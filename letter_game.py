@@ -7,6 +7,7 @@ import sys
 # fruits and vegetables from top 20 sold in us (used https://goo.gl/Cnw6nd)
 fruits = []
 vegetables = []
+candies = []
 
 # initialize the game by reading file line by line (used https://goo.gl/d8egZk)
 def initialize():
@@ -18,6 +19,10 @@ def initialize():
     f2 = f2.readlines()
     for x in f2:
         vegetables.append(x)
+    f3=open(os.path.join("categories", "candies.txt"), "r")
+    f3 = f3.readlines()
+    for x in f3:
+        candies.append(x)
 
 # clears the screen before playing
 def clear():
@@ -73,12 +78,14 @@ def play(done):
     clear()
     initialize()
 
-    print("1 - Fruits" + "\n" + "2 - Vegetables")
+    print("1 - Fruits" + "\n" + "2 - Vegetables" + "\n" + "3 - Candies")
     category = int(input("Which category do you want to play with? "))
     if(category == 1):
         chosen_set = fruits
     elif(category == 2):
         chosen_set = vegetables
+    elif(category == 3):
+        chosen_set = candies
     secret_word = random.choice(chosen_set)[:-1]
     bad_guesses = []
     good_guesses = []
