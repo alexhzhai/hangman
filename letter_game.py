@@ -119,7 +119,7 @@ def play(done):
         else:
             bad_guesses.append(guess)
             if len(bad_guesses) == 7:
-                draw(bad_guesses, good_guesses, secret_word)
+                draw(bad_guesses, good_guesses, secret_word, chosen_name)
                 print("You lost!")
                 print("The secret word was {}.".format(secret_word))
                 done = True
