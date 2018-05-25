@@ -3,28 +3,21 @@ import os
 import random
 import sys
 
-fruits = [
-    'apple',
-    'banana',
-    'orange',
-    'coconut',
-    'strawberry',
-    'lime',
-    'grapefruit',
-    'lemon',
-    'kumquat',
-    'blueberry',
-    'melon'
-]
+# lists for each game category that stores possible keywords
+fruits = []
+vegetables = []
 
-vegetables = [
-    'asparagus',
-    'brocolli',
-    'spinach',
-    'cauliflower',
-    'arugula',
-    'cabbage'
-]
+# initialize the game by reading file line by line (used goo.gl/d8egZk)
+def initialize():
+
+    f1=open("fruits.txt", "r")
+    f1 = f1.readlines()
+    for x in f1:
+        fruits.append(x)
+    f2=open("vegetables.txt", "r")
+    f2 = f2.readlines()
+    for x in f2:
+        vegetables.append(x)
 
 # clears the screen before playing
 def clear():
@@ -75,13 +68,15 @@ def get_guess(bad_guesses, good_guesses):
 
 def play(done):
     clear()
+    initialize()
+
     print("1 - Fruits" + "\n" + "2 - Vegetables")
     category = int(input("Which category do you want to play with? "))
     if(category == 1):
         chosen_set = fruits
     elif(category == 2):
         chosen_set = vegetables
-    secret_word = random.choice(chosen_set)
+    secret_word = random.choice(chosen_set)[:-1]
     bad_guesses = []
     good_guesses = []
 

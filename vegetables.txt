@@ -1,0 +1,6 @@
+asparagus
+brocolli
+spinach
+cauliflower
+arugula
+cabbage
