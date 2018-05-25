@@ -9,12 +9,11 @@ vegetables = []
 
 # initialize the game by reading file line by line (used goo.gl/d8egZk)
 def initialize():
-
-    f1=open("fruits.txt", "r")
+    f1=open(os.path.join("categories", "fruits.txt"), "r")
     f1 = f1.readlines()
     for x in f1:
         fruits.append(x)
-    f2=open("vegetables.txt", "r")
+    f2 = open(os.path.join("categories", "vegetables.txt"), "r")
     f2 = f2.readlines()
     for x in f2:
         vegetables.append(x)
