@@ -4,10 +4,11 @@ import random
 import sys
 
 # lists for each game category that stores possible keywords
+# fruits and vegetables from top 20 sold in us (used https://goo.gl/Cnw6nd)
 fruits = []
 vegetables = []
 
-# initialize the game by reading file line by line (used goo.gl/d8egZk)
+# initialize the game by reading file line by line (used https://goo.gl/d8egZk)
 def initialize():
     f1=open(os.path.join("categories", "fruits.txt"), "r")
     f1 = f1.readlines()

@@ -1,6 +1,19 @@
-asparagus
-brocolli
+potatoes
+tomatoes
+onions
+carrots
+lettuce
+broccoli
+bell peppers
+celery
+cucumbers
+corn
+garlic
+mushrooms
+sweet potatoes
 spinach
-cauliflower
-arugula
 cabbage
+green beans
+cauliflower
+green onions
+asparagus
