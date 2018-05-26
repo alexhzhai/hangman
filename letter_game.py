@@ -35,12 +35,12 @@ def clear():
         os.system('clear')
 
 # 'draw' game interface
-def draw(bad_guesses, good_guesses, secret_word, chosen_set):
+def draw(bad_guesses, good_guesses, secret_word, chosen_set, chosen_level, level_name):
     # clear the screen
     clear()
 
     # print category and draw the strikes
-    print("Category: " + chosen_set + " | " + "Strikes: {}/7".format(len(bad_guesses)))
+    print("Category: " + chosen_set + " | " + "Level: " + level_name + " | " + "Strikes: {}/{}".format(len(bad_guesses), chosen_level))
     print('')
 
     print('Bad guesses: ')
@@ -92,6 +92,17 @@ def play(done):
     elif(category == 3):
         chosen_set = candies
         chosen_name = "Candies"
+    print("1 - Easy (15 strikes)" + "\n" + "2 - Medium (12 strikes)" + "\n" + "3 - Hard (7 strikes)")
+    level = int(input("What level do you want to play? "))
+    if(level == 1):
+        chosen_level = 15
+        level_name = "Easy"
+    elif(level == 2):
+        chosen_level = 12
+        level_name = "Medium"
+    elif(level == 3):
+        chosen_level = 7
+        level_name = "Hard"
     secret_word = ""
     if " " in secret_word:
         secret_word = random.choice(chosen_set)
@@ -102,7 +113,7 @@ def play(done):
 
     # game manager
     while True:
-        draw(bad_guesses, good_guesses, secret_word, chosen_name)
+        draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
         guess = get_guess(bad_guesses, good_guesses)
 
         actual_word = secret_word.replace(" ", "")
@@ -118,8 +129,8 @@ def play(done):
                 done = True
         else:
             bad_guesses.append(guess)
-            if len(bad_guesses) == 7:
-                draw(bad_guesses, good_guesses, secret_word, chosen_name)
+            if len(bad_guesses) == chosen_level:
+                draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
                 print("You lost!")
                 print("The secret word was {}.".format(secret_word))
                 done = True
@@ -130,6 +141,7 @@ def play(done):
             if play_again.lower() != 'n':
                 return play(done=False)
             else:
+                print("Thanks for playing!")
                 sys.exit()
 
 # prompts user to start game
@@ -142,7 +154,7 @@ def welcome():
         return True
 
 # welcome message
-print('Welcome to Letter Guess!')
+print('Welcome to Hangman!')
 
 done = False
 

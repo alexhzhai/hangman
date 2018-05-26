@@ -1,6 +1,5 @@
 m&ms
 kisses
-snickers
 twizzlers
 reeses
 kit kat
@@ -14,3 +13,4 @@ tootsie rolls
 milky way
 swedish fish
 cotton candy
+snickers
