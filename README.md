@@ -11,3 +11,4 @@ game first prompts with category choice (out of 3 categories) and level setting 
 ## acknowledgments
 
 * fruits and vegetables category keywords from Produce Marketing Association (https://goo.gl/Cnw6nd)
+* candy names from 

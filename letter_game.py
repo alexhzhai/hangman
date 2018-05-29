@@ -2,6 +2,7 @@
 import os
 import random
 import sys
+from time import sleep
 
 # lists for each game category that stores possible keywords
 # fruits and vegetables from top 20 sold in us (used https://goo.gl/Cnw6nd)
@@ -76,13 +77,29 @@ def get_guess(bad_guesses, good_guesses):
         else:
             return guess
 
+def choose_dificulty():
+    try:
+        lev = int(input("What level do you want to play? "))
+        if (lev == 1 or lev == 2 or lev == 3):
+            return lev
+        else:
+            raise ValueError()
+    except (ValueError):
+        input("Not a valid input. Press enter to continue.")
+        choose_dificulty()
 
 def play(done):
     clear()
     initialize()
 
     print("1 - Fruits" + "\n" + "2 - Vegetables" + "\n" + "3 - Candies")
-    category = int(input("Which category do you want to play with? "))
+    try:
+        category = int(input("Which category do you want to play with? "))
+        if (category != 1 and category != 2 and category != 3):
+            raise ValueError()
+    except (ValueError):
+        input("Not a valid input. Press enter to continue.")
+        play(done)
     if(category == 1):
         chosen_set = fruits
         chosen_name = "Fruits"
@@ -92,8 +109,11 @@ def play(done):
     elif(category == 3):
         chosen_set = candies
         chosen_name = "Candies"
+
     print("1 - Easy (15 strikes)" + "\n" + "2 - Medium (12 strikes)" + "\n" + "3 - Hard (7 strikes)")
-    level = int(input("What level do you want to play? "))
+    level = choose_dificulty()
+    chosen_level = 1
+    level_name = ""
     if(level == 1):
         chosen_level = 15
         level_name = "Easy"
@@ -103,6 +123,7 @@ def play(done):
     elif(level == 3):
         chosen_level = 7
         level_name = "Hard"
+
     secret_word = ""
     if " " in secret_word:
         secret_word = random.choice(chosen_set)
