@@ -113,10 +113,10 @@ def play(done):
     print("1 - Easy (15 strikes)" + "\n" + "2 - Medium (12 strikes)" + "\n" + "3 - Hard (7 strikes)")
     level = choose_dificulty()
     chosen_level = 1
-    level_name = ""
+    level_name= ""
     if(level == 1):
         chosen_level = 15
-        level_name = "Easy"
+        level_ame = "Easy"
     elif(level == 2):
         chosen_level = 12
         level_name = "Medium"
