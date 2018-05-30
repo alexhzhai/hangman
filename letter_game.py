@@ -112,8 +112,9 @@ def play(done):
 
     print("1 - Easy (15 strikes)" + "\n" + "2 - Medium (12 strikes)" + "\n" + "3 - Hard (7 strikes)")
     level = choose_dificulty()
-    chosen_level = 1
+    chosen_level = 0
     level_name= ""
+
     if(level == 1):
         chosen_level = 15
         level_ame = "Easy"
@@ -134,7 +135,10 @@ def play(done):
 
     # game manager
     while True:
-        draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
+        if level == 1:
+            draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, "Easy")
+        else:
+            draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
         guess = get_guess(bad_guesses, good_guesses)
 
         actual_word = secret_word.replace(" ", "")
