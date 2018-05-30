@@ -12,6 +12,7 @@ candies = []
 
 # initialize the game by reading file line by line (used https://goo.gl/d8egZk)
 def initialize():
+    #"r" in open --> open for reading, default
     f1=open(os.path.join("categories", "fruits.txt"), "r")
     f1 = f1.readlines()
     for x in f1:
@@ -118,7 +119,7 @@ def play(done):
     level_name= ""
     if(level == 1):
         chosen_level = 15
-        level_ame = "Easy"
+        level_name = "Easy"
     elif(level == 2):
         chosen_level = 12
         level_name = "Medium"
@@ -136,10 +137,7 @@ def play(done):
 
     # game manager
     while True:
-        if level == 1:
-            draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, "Easy")
-        else:
-            draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
+        draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
         guess = get_guess(bad_guesses, good_guesses)
 
         actual_word = secret_word.replace(" ", "")
