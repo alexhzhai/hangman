@@ -54,10 +54,10 @@ def draw(bad_guesses, good_guesses, secret_word, chosen_set, chosen_level, level
         if letter in good_guesses:
             print(letter, end='')
         elif letter == " ":
+            # checks if letter is a space (i.e: kit kat, swedish fish, sweet potatoes)
             print(' ', end ='')
         else:
             print('_', end='')
-
     print('')
 
 # gets the user's guesses
@@ -77,6 +77,7 @@ def get_guess(bad_guesses, good_guesses):
         else:
             return guess
 
+# prompts user for level/difficulty for game
 def choose_dificulty():
     try:
         lev = int(input("What level do you want to play? "))
@@ -112,9 +113,9 @@ def play(done):
 
     print("1 - Easy (15 strikes)" + "\n" + "2 - Medium (12 strikes)" + "\n" + "3 - Hard (7 strikes)")
     level = choose_dificulty()
+    # chosen level helps with number of alloted strikes and level_name is displayed
     chosen_level = 0
     level_name= ""
-
     if(level == 1):
         chosen_level = 15
         level_ame = "Easy"
@@ -154,6 +155,7 @@ def play(done):
                 done = True
         else:
             bad_guesses.append(guess)
+            # number of bad guesses = chosen level alloted guesses
             if len(bad_guesses) == chosen_level:
                 draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
                 print("You lost!")
