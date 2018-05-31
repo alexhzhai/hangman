@@ -1,19 +1,19 @@
-01
-02
-03
-04
-05
-06
-07
-08
-09
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
+01 The candy is wrapped in foil. The candy is made by the Hershey's company.
+02 The candy is red. The candy is shaped like a vine.
+03 The candy is made of chocolate and peanut butter. The candy has a cereal version.
+04 The candy is made of chocolate and a thin wafer. The candy's packaging is bright red.
+05 The candy is made of chocolate and peanut butter. The candy claims to make your fingers buttery.
+06 The candy is made of chocolate and caramel. The candy has a left and right.
+07 The candy is thin and small a chocolate bar. The candy is made by the Hershey's company.
+08 The candy is made of chocolate and nougat. The candy is named after a historical novel.
+09 The candy is popular during Halloween. The candy has three layers with three different colors.
+10 The candy can be found in many different colors. The candy lets you taste the rainbow.
+11 The candy is made of chocolate. The candy found in a cylindrical wrapping.
+12 The candy is made of chocolate and caramel. The candy is named after a galaxy.
+13 The candy is red and chewy. The candy is shaped like an animal that lives in the water.
+14 The candy is made of pure sugar. The candy is popular at fairs and other events.
+15 The candy is made of chocolate and peanut butter. The candy claims that you're not you when you're hungry.
+16 The candy features a kind of nut. The candy is unpopular among many.
+17 The candy is a sweet and tangy hard candy. The candy can also be found in gummy or chew form.
+18 The candy is small and of many colors. The candy is bean-shaped.
+19 The candy is popular at fairs. The candy is made by stretching boiled sugar and is sticky.
