@@ -1,19 +1,19 @@
-01
-02
-03
-04
-05
-06
-07
-08
-09
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
+01 The vegetable is brown and oblong. / The vegetable can be formed into many shapes.
+02 The vegetable is red and circular. / The vegetable has many seeds.
+03 The vegetable can make someone cry when they are chopping it. / The vegetable is white an circular.
+04 The vegetable is orange. / The vegetable is said to improve your eyesight.
+05 The vegetable is green. / The vegetable is used in many salads.
+06 The vegetable is green. / The vegetable is shaped like a tree.
+07 The vegetable can be green, yellow, or red. / The vegetable is crunchy and a little bitter.
+08 The vegetable is light green. / The vegetable has a lot of fiber and water.
+09 The vegetable is dark green on the outside and light green on the inside. / The vegetable is crunchy.
+10 The vegetable has ears. / The vegetable is yellow. 
+11 The vegetable has a distinct taste. / The vegetable is small and is found in cloves.
+12 The vegetable can be brown or tan. / The vegetable can be considered a fungus.
+13 The vegetable is an alternative to its sibling vegetable. / The vegetable can be orange or purple.
+14 The vegetable is green. / The vegetable shrinks when you cook it.
+15 The vegetable is light green. / The vegetable has a lot of water stored in it.
+16 The vegetable is dark green. / The vegetable is stringy shaped.
+17 The vegetable has a sibling vegetable. / The vegetable is very light beige.
+18 The vegetable has a larger and rounder sibling. / The vegetable is green and cylindrical.
+19 The vegetable is often called sparrow grass. / The vegetable is green and has shoots.
