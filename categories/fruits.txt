@@ -1,20 +1,19 @@
-bananas
-apples
-grapes
-strawberries
-oranges
-watermelon
-lemons
-blueberries
-peaches
-cantaloupe
-avocados
-pineapple
-cherries
-pears
-limes
-raspberries
-blackberries
-plums
-nectarines
-grapefruit
+bananas 01
+apples 02
+grapes 03
+strawberries 04
+oranges 05
+watermelon 06
+lemons 07
+blueberries 08
+peaches 09
+cantaloupe 10
+pineapple 11
+cherries 12
+pears 13
+limes 14
+raspberries 15
+blackberries 16
+plums 17
+nectarines 18
+grapefruit 19

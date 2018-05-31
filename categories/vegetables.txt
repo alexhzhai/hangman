@@ -1,19 +1,19 @@
-potatoes
-tomatoes
-onions
-carrots
-lettuce
-broccoli
-bell peppers
-celery
-cucumbers
-corn
-garlic
-mushrooms
-sweet potatoes
-spinach
-cabbage
-green beans
-cauliflower
-green onions
-asparagus
+potatoes 01
+tomatoes 02
+onions 03
+carrots 04
+lettuce 05
+broccoli 06
+bell peppers 07
+celery 08
+cucumbers 09
+corn 10
+garlic 11
+mushrooms 12
+sweet potatoes 13
+spinach 14
+cabbage 15
+green beans 16
+cauliflower 17
+green onions 18
+asparagus 19

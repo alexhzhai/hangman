@@ -1,0 +1,19 @@
+01 The fruit is yellow. / The fruit is high in potassium.
+02 The fruit can be red or green. / An _____ a day keeps The doctor away.
+03 The fruit is found in a bunch. / The fruit can be green or purple.
+04 The fruit is red. / The fruit is relatively small and has small black seeds.
+05 The fruit is orange-colored. / The fruit is high in vitamin c.
+06 The fruit is has black seeds. / The fruit is red and green.
+07 The fruit is yellow and bitter. / The fruit is also sour.
+08 The fruit is high in antioxidants. / The fruit is blue.
+09 The fruit is orange. / The fruit has a pit.
+10 The fruit is orange. / The fruit is the most popular melon in the United States.
+11 The fruit is yellow and green. / The fruit is spiky on the outside.
+12 The fruit is red and small. / The fruit is on many deserts.
+13 The fruit is green. / The fruit is round on the bottom and tapers at the top.
+14 The fruit is extremely sour and bitter. / The fruit can be yellow or green.
+15 The fruit is a shade of red. / The fruit is similar in shape to a blackberry.
+16 The fruit is very dark blue. / The fruit is similar in shape to a raspberry.
+17 The fruit is purple. / The fruit has a small pit.
+18 The fruit is sometimes called a shaved peach. / The fruit is orange and relatively small.
+19 The fruit is blood orange colored. / The fruit has many individual seeds.

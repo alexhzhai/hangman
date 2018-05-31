@@ -2,7 +2,7 @@
 import os
 import random
 import sys
-from time import sleep
+import time
 
 # lists for each game category that stores possible keywords
 # fruits and vegetables from top 20 sold in us (used https://goo.gl/Cnw6nd)
@@ -37,12 +37,17 @@ def clear():
         os.system('clear')
 
 # 'draw' game interface
-def draw(bad_guesses, good_guesses, secret_word, chosen_set, chosen_level, level_name):
+def draw(bad_guesses, good_guesses, secret_word, chosen_set, chosen_level, level_name, hints_on):
     # clear the screen
     clear()
 
     # print category and draw the strikes
-    print("Category: " + chosen_set + " | " + "Level: " + level_name + " | " + "Strikes: {}/{}".format(len(bad_guesses), chosen_level))
+    if hints_on:
+        print("Category: " + chosen_set + " | " + "Level: " + level_name + " | "
+            + "Strikes: {}/{}".format(len(bad_guesses), chosen_level) + " | " + "Hints: ON")
+    else:
+        print("Category: " + chosen_set + " | " + "Level: " + level_name + " | "
+            + "Strikes: {}/{}".format(len(bad_guesses), chosen_level) + " | " + "Hints: OFF")
     print('')
 
     print('Bad guesses: ')
@@ -90,6 +95,17 @@ def choose_dificulty():
         input("Not a valid input. Press enter to continue.")
         choose_dificulty()
 
+def display_hint(chosen_name, line_number):
+    myLine = ""
+    with open("{}_hints.txt".format(chosen_name.lower())) as fp:
+        for i, line in enumerate(fp):
+            if i == (line_number-1):
+                myLine = line
+    myLine = myLine[3:]
+    myLine = myLine.replace('"', '')
+    myLine = myLine.split(" / ")
+    return myLine
+
 def play(done):
     clear()
     initialize()
@@ -112,32 +128,41 @@ def play(done):
         chosen_set = candies
         chosen_name = "Candies"
 
-    print("1 - Easy (15 strikes)" + "\n" + "2 - Medium (12 strikes)" + "\n" + "3 - Hard (7 strikes)")
+    print("1 - Easy (15 strikes, hints)" + "\n" + "2 - Medium (12 strikes, hints)" + "\n" + "3 - Hard (10 strikes, no hints)")
     level = choose_dificulty()
     # chosen level helps with number of alloted strikes and level_name is displayed
     chosen_level = 0
     level_name= ""
+    hints_on = False
     if(level == 1):
         chosen_level = 15
         level_name = "Easy"
+        hints_on = True
     elif(level == 2):
         chosen_level = 12
         level_name = "Medium"
+        hints_on = True
     elif(level == 3):
         chosen_level = 7
         level_name = "Hard"
 
     secret_word = ""
     if " " in secret_word:
-        secret_word = random.choice(chosen_set)
+        non_edit = random.choice(chosen_set)[:-1]
+        # non_edit = kit kat 13, secret_word = kit kat, line_number = 13
+        secret_word = non_edit[:-3]
+        line_number = int(non_edit[-2:])
     else:
-        secret_word = random.choice(chosen_set)[:-1]
+        non_edit = random.choice(chosen_set)
+        secret_word = non_edit[:-4]
+        line_number = int(non_edit[-3:])
     bad_guesses = []
     good_guesses = []
 
+    hint_number = 0
     # game manager
     while True:
-        draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
+        draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name, hints_on)
         guess = get_guess(bad_guesses, good_guesses)
 
         actual_word = secret_word.replace(" ", "")
@@ -153,9 +178,22 @@ def play(done):
                 done = True
         else:
             bad_guesses.append(guess)
-            # number of bad guesses = chosen level alloted guesses
-            if len(bad_guesses) == chosen_level:
-                draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name)
+            numb_bad = len(bad_guesses)
+            hints = display_hint(chosen_name, line_number)
+            if numb_bad == chosen_level-2:
+                hint = hints[0]
+                hint = hint.replace('"', '')
+                print("Hint: {}".format(hint))
+                time.sleep(2)
+            elif numb_bad == chosen_level-1:
+                hint = hints[1]
+                hint = hint.replace('"', '')
+                print("Hint: {}".format(hint))
+                time.sleep(2)
+
+            # number of bad guesses equals chosen level alloted guesses
+            if numb_bad == chosen_level:
+                draw(bad_guesses, good_guesses, secret_word, chosen_name, chosen_level, level_name, hints_on)
                 print("You lost!")
                 print("The secret word was {}.".format(secret_word))
                 done = True
