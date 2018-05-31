@@ -6,7 +6,7 @@ a simple game of hangman with 3 categories and 3 level settings
 
 ## quickstart
 
-download the zip file above and run the letter_game.py file
+download the zip file above and run the ```letter_game.py``` file
 
 ## gameplay
 
