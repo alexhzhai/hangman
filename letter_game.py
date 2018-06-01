@@ -1,3 +1,8 @@
+# Alex Zhai  June 1 2018
+# A simple game of hangman with 3 categories and 3 level settings.
+# Game first prompts with category choice (out of 3 categories) and level setting (easy, medium, hard).
+# The player has guesses letter in the word before reaching limit of strikes.
+
 # system functionality
 import os
 import random
@@ -45,9 +50,11 @@ def draw(bad_guesses, good_guesses, secret_word, chosen_set, chosen_level, level
     if hints_on:
         print("Category: " + chosen_set + " | " + "Level: " + level_name + " | "
             + "Strikes: {}/{}".format(len(bad_guesses), chosen_level) + " | " + "Hints: ON")
+        # message that hints is on
     else:
         print("Category: " + chosen_set + " | " + "Level: " + level_name + " | "
             + "Strikes: {}/{}".format(len(bad_guesses), chosen_level) + " | " + "Hints: OFF")
+        # message that hints is off
     print('')
 
     print('Bad guesses: ')
